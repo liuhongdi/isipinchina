@@ -5,10 +5,11 @@
 downchinaip.sh负责下载ip地址，需要把它放到crond中定时运行
 
 例如:
-···
+
 [root@blog conf]# crontab -l
+
 30 0 * * * sh /data/web/think_cmd/chinaip/downchinaip.sh >> /data/logs/cronlogs/downchinaiplogs.log 2>&1
-···
+
 需要修改配置的程序:
 ---
 # 1,downchinaip.sh
