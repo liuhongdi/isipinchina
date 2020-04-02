@@ -3,13 +3,15 @@
 
 
 downchinaip.sh负责下载ip地址，需要把它放到crond中定时运行
+
 例如:
+···
 [root@blog conf]# crontab -l
 30 0 * * * sh /data/web/think_cmd/chinaip/downchinaip.sh >> /data/logs/cronlogs/downchinaiplogs.log 2>&1
-
+···
 需要修改配置的程序:
-
-1,downchinaip.sh
+---
+# 1,downchinaip.sh
 
 
 指定下载后保存到本地的ip地址段文件
@@ -27,8 +29,8 @@ php_path=/usr/local/soft/php7/bin/php
 putip2redis.php保存到的路径
 
 script_path=/data/web/think_cmd/chinaip/putip2redis.php
-
-2,putip2redis.php(负责解析ip地址，转成数字后保存到redis)
+---
+# 2,putip2redis.php(负责解析ip地址，转成数字后保存到redis)
 
 redis服务器的ip
 
@@ -46,8 +48,8 @@ define("IP_FILE", "/data/data/ipdata/china_ip.txt");
 
 define("IP_HASH_NAME", "china_ip_hash");
 
-
-3,isipinchina.php(判断ip是否属于国内)
+---
+# 3,isipinchina.php(判断ip是否属于国内)
 
 redis服务器的ip
 
