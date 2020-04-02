@@ -18,7 +18,6 @@ $redis_link->connect(REDIS_SERVER,REDIS_PORT);
 //------------------------------------------------main
 
 $ip = "203.137.164.152";
-//$ip = "43.243.12.116";
 $is_in = is_ip_in_china($ip);
 echo "is_in:".$is_in.":\n";
 if ($is_in == true) {
